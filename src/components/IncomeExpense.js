@@ -6,12 +6,12 @@ const IncomeExpense = () => {
   const income = transactions
     .map((t) => t.amount)
     .filter((t) => t >= 0)
-    .reduce((acc, curr) => acc + curr);
+    .reduce((acc, curr) => acc + curr, 0);
   const expense = Math.abs(
     transactions
       .map((t) => t.amount)
       .filter((t) => t < 0)
-      .reduce((acc, curr) => acc + curr)
+      .reduce((acc, curr) => acc + curr, 0)
   );
 
   return (
